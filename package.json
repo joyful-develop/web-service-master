@@ -1,0 +1,9 @@
+{
+  "name": "web-service-master",
+  "version": "0.0.1",
+  "description": "web service public container (micro front end)",
+  "main": "index.js",
+  "repository": "https://github.com/joyful-develop/web-service-master.git",
+  "author": "송영진 <youngjin.song@ltree.co.kr>",
+  "license": "MIT"
+}
