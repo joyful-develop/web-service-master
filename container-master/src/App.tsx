@@ -1,21 +1,5 @@
-// import React, { useEffect } from "react";
-// import { BrowserRouter } from "react-router-dom";
-// import Layout from "./components/Layout";
-// const App = (props: any) => {
+const App = () => {
+    return <></>;
+  };
 
-//   useEffect(() => {
-
-//   }, []);
-
-//   return (
-//     <BrowserRouter basename={props.basename}>
-//       <Layout {...props} />
-//     </BrowserRouter>
-//   )
-
-// }
-// export default App;
-
-export const App = () => {
-  return <h1>React</h1>;
-}
+  export default App;
