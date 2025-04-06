@@ -70,6 +70,14 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
 
     - 커스텀 훅이 저장되는 폴더
 
+### `src\pages`
+
+    - 도메인 기준으로 분류하여 라우팅이 적용되는 페이지와 해당 도메인에만 사용되는 특정 폼, 모달, 버튼 등의 구성 요소가 저장되는 폴더
+    - 각 뷰 폴더의 구성 파일
+        1. 실제 React 구성 요소 파일(.ts)
+        2. 구성요서에 대한 Styled componets 파일(.styles.ts)
+        3. Storybook 파일(.stories.ts)
+
 #### `src\services`
 
     - LocalStorage 제어하는 JavaScript 모듈 등이 저장되는 폴더
@@ -96,14 +104,6 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
     - 각 공통 유틸리티 폴더의 구성 파일
         1. 상수 파일(.sconstants.ts)
         2. 주요 기능별 공통 함수 파일(.helpers.ts)
-
-### `src\views`
-
-    - 도메인 기준으로 분류하여 라우팅이 적용되는 페이지와 해당 도메인에만 사용되는 특정 폼, 모달, 버튼 등의 구성 요소가 저장되는 폴더
-    - 각 뷰 폴더의 구성 파일
-        1. 실제 React 구성 요소 파일(.ts)
-        2. 구성요서에 대한 Styled componets 파일(.styles.ts)
-        3. Storybook 파일(.stories.ts)
 
 
 

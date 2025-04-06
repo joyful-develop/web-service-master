@@ -1,26 +1,50 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    // 기본 옵션
+    "target": "es6",
     "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "allowJs": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "noEmit": false,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // 타입 검사
+    "strict": true,
+    // "noImplicitAny": true,                // any타입 금지 여부
+    // "strictNullChecks": true,             // null, undefined 타입에 이상한 짓 할시 에러내기
+    // "strictFunctionTypes": true,          // 함수파라미터 타입체크 강하게
+    // "strictPropertyInitialization": true, // class constructor 작성시 타입체크 강하게
+    // "noImplicitThis": true,               // this 키워드가 any 타입일 경우 에러내기
+    // "alwaysStrict": true,                 // 자바스크립트 "use strict" 모드 켜기
+    // "noUnusedLocals": true,               // 쓰지않는 지역변수 있으면 에러내기
+    // "noUnusedParameters": true,           // 쓰지않는 파라미터 있으면 에러내기
+    // "noImplicitReturns": true,            // 함수에서 return 빼먹으면 에러내기
+    // "noFallthroughCasesInSwitch": true,   // switch문 이상하면 에러내기
+    "skipLibCheck": true,
+
+    // 경로 지정
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      // "@context/*": ["context/*"],
+      "@features/*": ["Features/*"],
+      // "@hooks/*": ["hooks/*"],
+      "@pages/*": ["pages/*"],
+      "@services/*": ["services/*"],
+      "@store/*": ["store/*"],
+      // "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"],
     },
-    "outDir": "./dist"
+    "outDir": "./dist",
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts" ]
 }
