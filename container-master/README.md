@@ -106,7 +106,9 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
         2. 주요 기능별 공통 함수 파일(.helpers.ts)
 
 
-
+## VSCode 확장 기능 설치
+    - ESLint
+    - Prettier - Code formatter
 
 ## 실행 전 확인
 

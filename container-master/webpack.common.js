@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
@@ -14,18 +14,19 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    plugins: [
-      new TsconfigPathsPlugin(),
-    ]
+    plugins: [new TsconfigPathsPlugin()],
   },
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx)$/i,
+        test: /\.(js|jsx|ts|tsx)$/i,
         exclude: /node_modules/,
         use: {
-          loader: "ts-loader",
-          // loader: ["babel-loader", "ts-loader"],
+          loader: 'ts-loader',
+          options: {
+            configFile: path.resolve(__dirname, 'tsconfig.json'),
+          },
+          // loader: ['babel-loader', 'ts-loader'],
         },
       },
       // {
@@ -42,14 +43,17 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      React: "react",
+      React: 'react',
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      minify: process.env.NODE_ENV === 'production' ? {
-        collapseWhitespace: true,
-        removeComments: true,
-    } : false,
+      minify:
+        process.env.NODE_ENV === 'production'
+          ? {
+              collapseWhitespace: true,
+              removeComments: true,
+            }
+          : false,
     }),
     new CleanWebpackPlugin(),
   ],
