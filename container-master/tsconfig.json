@@ -34,13 +34,13 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
-      // "@context/*": ["context/*"],
+      "@context/*": ["context/*"],
       "@features/*": ["features/*"],
-      // "@hooks/*": ["hooks/*"],
+      "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@services/*": ["services/*"],
       "@store/*": ["store/*"],
-      // "@styles/*": ["styles/*"],
+      "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]
     },
     "outDir": "./dist"
