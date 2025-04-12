@@ -7,18 +7,21 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "npx vite dev --mode prod",
+    "start": "vite --mode dev.local",
+    "start:prod": "vite --mode prod.local",
+    "build": "tsc && vite build --mode prod",
+    "build:dev": "tsc && vite build --mode dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx vite optimize & npx vite build --mode prod",
+    "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write --cache .",
-    "preview": "vite preview"
+    "format": "prettier --write --cache ."
   },
   "dependencies": {
     "dotenv": "^16.5.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "styled-components": "^6.1.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",
@@ -36,9 +39,11 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
+    "sass": "^1.86.3",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.29.1",
     "vite": "^6.2.6",
+    "vite-plugin-html-env": "^1.2.8",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
