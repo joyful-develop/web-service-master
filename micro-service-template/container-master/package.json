@@ -1,0 +1,53 @@
+{
+  "name": "container-master",
+  "version": "0.0.1",
+  "main": "main.tsx",
+  "repository": "https://github.com/joyful-develop/web-service-master.git",
+  "author": "joyful-develop <joyful0159@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "vite --mode dev.local",
+    "start:prod": "vite --mode prod.local",
+    "build": "tsc && vite build --mode prod",
+    "build:dev": "tsc && vite build --mode dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write --cache ."
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.5.0",
+    "react-router-dom": "^7.5.0",
+    "styled-components": "^6.1.17",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "sass": "^1.86.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.29.1",
+    "vite": "^6.2.6",
+    "vite-plugin-html-env": "^1.2.8",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
