@@ -4,6 +4,8 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 import vitePluginHtmlEnv from 'vite-plugin-html-env';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import federation from '@originjs/vite-plugin-federation';
+import tailwindcss from 'tailwindcss';
 
 export default ({ mode }: { mode: string }) => {
   const env = {
@@ -14,7 +16,21 @@ export default ({ mode }: { mode: string }) => {
 
   return defineConfig({
     envDir: './config/',
-    plugins: [react(), tsconfigPaths(), vitePluginHtmlEnv(), vitePluginHtmlEnv({ compiler: true })],
+    plugins: [
+      react(),
+      tsconfigPaths(),
+      tailwindcss(),
+      vitePluginHtmlEnv(),
+      vitePluginHtmlEnv({ compiler: true }),
+      federation({
+        name: 'host-app',
+        filename: 'remoteEntry.js',
+        exposes: {
+          './DashBoard': './src/pages/dashBoard/DashBoard.tsx',
+        },
+        shared: ['react', 'react-dom'],
+      }),
+    ],
     resolve: {
       alias: [
         {
@@ -71,6 +87,10 @@ export default ({ mode }: { mode: string }) => {
       outDir: path.resolve(__dirname, './dist'),
       emptyOutDir: true,
       sourcemap: true,
+      modulePreload: false,
+      target: 'esnext',
+      minify: false,
+      cssCodeSplit: false,
       rollupOptions: {
         output: {
           entryFileNames: 'assets/[name]-[hash].js',
@@ -131,6 +151,9 @@ export default ({ mode }: { mode: string }) => {
           },
         },
       },
+    },
+    preview: {
+      port: 5001,
     },
   });
 };

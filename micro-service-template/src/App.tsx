@@ -64,8 +64,13 @@ function App() {
           <a href={'/userSetting'}>설정정</a>
         </div>
       </div>
+      {/* <div className={`${styles.flexCenter} ${styles.responsive} font-spoqa bg-gray-500}`> */}
       <h1>{bears} around here...</h1>
-      <button onClick={increasePopulation}>one up</button>
+      <button
+        className=' font-spoqaBold h-[68px] w-[220px] rounded-[5px] text-[24px] text-white'
+        onClick={increasePopulation}>
+        one up
+      </button>
     </>
   );
 }

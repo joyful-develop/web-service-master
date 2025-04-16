@@ -106,6 +106,8 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
 
     - ESLint
     - Prettier - Code formatter
+    - PostCSS Language Support
+    - Tailwind CSS IntelliSense
 
 ## 실행 전 확인
 
