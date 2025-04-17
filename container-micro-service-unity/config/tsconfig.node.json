@@ -14,6 +14,11 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowJs": true,
+    "sourceMap": true,
 
     /* Linting */
     "strict": true,
@@ -24,5 +29,6 @@
 
     "outDir": "./dist"
   },
-  "include": ["../vite.config.ts"]
+  "include": ["../vite.config.ts"],
+  "extends": "./tsconfig.path.json"
 }
