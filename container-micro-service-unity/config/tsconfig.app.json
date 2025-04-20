@@ -18,9 +18,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "declaration": true,
-    "declarationMap": true,
+    // "declarationMap": true,
     "allowJs": true,
-    "sourceMap": true,
+    // "sourceMap": true,
 
     /* Linting */
     "strict": true,
@@ -31,7 +31,7 @@
 
     "outDir": "./dist"
   },
-  "include": ["../src"],
+  "include": ["../lib"],
   "exclude": ["../node_modules"],
   "extends": "./tsconfig.path.json"
 }

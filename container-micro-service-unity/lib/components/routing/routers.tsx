@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+
 import DashBoardHome from '@pages/dashBoard/DashBoard.tsx';
 import UserSetting from '@pages/userSetting/UserSetting.tsx';
 const DashBoard = React.lazy(() => import('remoteApp/DashBoard'));

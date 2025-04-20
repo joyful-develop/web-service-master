@@ -16,9 +16,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "declaration": true,
-    "declarationMap": true,
+    // "declarationMap": true,
     "allowJs": true,
-    "sourceMap": true,
+    // "sourceMap": true,
 
     /* Linting */
     "strict": true,

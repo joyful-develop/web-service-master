@@ -52,12 +52,83 @@ export default tseslint.config(
       'import/no-duplicates': 'error',
       'import/no-unresolved': 'off',
       'import/prefer-default-export': 'off',
-      'import/extensions': [
+      'import/extensions': 'off',
+      'import/order': [
         'error',
-        'ignorePackages',
         {
-          ts: 'naver',
-          tsx: 'naver',
+          groups: ['type', 'builtin', 'external', 'internal', ['sibling', 'parent', 'index'], 'unknown'],
+          pathGroups: [
+            {
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'react*',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'axios*',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'logLevel*',
+              group: 'external',
+              position: 'after',
+            },
+            {
+              pattern: '@styles/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@hooks/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@store/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@features/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@components/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@pages/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@pages/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@context/*',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@services/*',
+              group: 'internal',
+              position: 'before',
+            },
+          ],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
         },
       ],
     },

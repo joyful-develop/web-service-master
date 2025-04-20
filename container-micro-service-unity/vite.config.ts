@@ -1,70 +1,67 @@
 import path from 'path';
 
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import vitePluginHtmlEnv from 'vite-plugin-html-env';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import tailwindcss from 'tailwindcss';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default () => {
   return defineConfig({
-    envDir: './config/',
     plugins: [
       react(),
       dts({
         insertTypesEntry: true,
         copyDtsFiles: true,
-        entryRoot: 'src',
-        include: ['src'],
-        exclude: ['node_modules', 'dist', '**/*.test.ts*', './src/vite-env.d.ts'],
+        entryRoot: 'lib',
+        include: ['lib'],
+        exclude: ['node_modules', 'dist', '**/*.test.ts*', './lib/vite-env.d.ts'],
+        rollupTypes: true,
       }),
       tsconfigPaths(),
       tailwindcss(),
-      vitePluginHtmlEnv(),
-      vitePluginHtmlEnv({ compiler: true }),
     ],
     resolve: {
       alias: [
         {
           find: '@',
-          replacement: path.resolve(__dirname, 'src'),
+          replacement: path.resolve(__dirname, 'lib'),
         },
         {
           find: '@assets',
-          replacement: path.resolve(__dirname, 'src/assets'),
+          replacement: path.resolve(__dirname, 'lib/assets'),
         },
         {
           find: '@components',
-          replacement: path.resolve(__dirname, 'src/components'),
+          replacement: path.resolve(__dirname, 'lib/components'),
         },
         {
           find: '@context',
-          replacement: path.resolve(__dirname, 'src/context'),
+          replacement: path.resolve(__dirname, 'lib/context'),
         },
         {
           find: '@features',
-          replacement: path.resolve(__dirname, 'src/features'),
+          replacement: path.resolve(__dirname, 'lib/features'),
         },
         {
           find: '@hooks',
-          replacement: path.resolve(__dirname, 'src/hooks'),
+          replacement: path.resolve(__dirname, 'lib/hooks'),
         },
         {
           find: '@pages',
-          replacement: path.resolve(__dirname, 'src/pages'),
+          replacement: path.resolve(__dirname, 'lib/pages'),
         },
         {
           find: '@services',
-          replacement: path.resolve(__dirname, 'src/services'),
+          replacement: path.resolve(__dirname, 'lib/services'),
         },
         {
           find: '@store',
-          replacement: path.resolve(__dirname, 'src/store'),
+          replacement: path.resolve(__dirname, 'lib/store'),
         },
         {
           find: '@utils',
-          replacement: path.resolve(__dirname, 'src/utils'),
+          replacement: path.resolve(__dirname, 'lib/utils'),
         },
       ],
       extensions: [],
@@ -74,19 +71,20 @@ export default () => {
     },
     build: {
       lib: {
-        entry: path.resolve(__dirname, 'src/main.ts'),
+        entry: path.resolve(__dirname, 'lib/index.ts'),
         name: 'container-micro-service-unity',
         formats: ['es', 'cjs'],
-        fileName: (format) => `main.${format}.js`,
+        fileName: (format) => `index.${format}.js`,
       },
       rollupOptions: {
         external: ['react', 'react-dom'],
         output: {
+          assetFileNames: 'index.[ext]',
           globals: {
             react: 'React',
             'react-dom': 'ReactDOM',
+            tailwindcss: 'tailwindcss',
           },
-          interop: 'compat',
         },
       },
       sourcemap: true,

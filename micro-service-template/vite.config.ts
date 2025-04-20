@@ -1,11 +1,10 @@
 import path from 'path';
 
+import federation from '@originjs/vite-plugin-federation';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
-import vitePluginHtmlEnv from 'vite-plugin-html-env';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import federation from '@originjs/vite-plugin-federation';
-import tailwindcss from 'tailwindcss';
 
 export default ({ mode }: { mode: string }) => {
   const env = {
@@ -20,8 +19,6 @@ export default ({ mode }: { mode: string }) => {
       react(),
       tsconfigPaths(),
       tailwindcss(),
-      vitePluginHtmlEnv(),
-      vitePluginHtmlEnv({ compiler: true }),
       federation({
         name: 'host-app',
         filename: 'remoteEntry.js',
@@ -114,16 +111,10 @@ export default ({ mode }: { mode: string }) => {
           },
           manualChunks: (id) => {
             if (id.includes('node_modules')) {
-              return `vendor`;
+              const module = id.split('mode_modules/').pop()?.split('/')[0];
+              return `vendor-${module}`;
             }
           },
-        },
-      },
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `@import "./src/assets/styles/scss/main.scss";`,
         },
       },
     },
@@ -153,7 +144,9 @@ export default ({ mode }: { mode: string }) => {
       },
     },
     preview: {
-      port: 5001,
+      host: env.VITE_APP_HOST,
+      port: SERVER_PORT,
+      open: true,
     },
   });
 };

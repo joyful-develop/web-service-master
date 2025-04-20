@@ -11,6 +11,7 @@
 // import DashBoard from './pages/dashBoard/DashBoard.tsx';
 // import UserSetting from './pages/userSetting/UserSetting.tsx';
 import { RouterProvider } from 'react-router-dom';
+
 import routerComponent from './components/routing/routers.tsx';
 import { useTestStore } from './store/useTestStore.ts';
 
@@ -67,7 +68,7 @@ function App() {
       {/* <div className={`${styles.flexCenter} ${styles.responsive} font-spoqa bg-gray-500}`> */}
       <h1>{bears} around here...</h1>
       <button
-        className=' font-spoqaBold h-[68px] w-[220px] rounded-[5px] text-[24px] text-white'
+        className='font-spoqaBold h-[68px] w-[220px] rounded-[5px] text-[24px] text-white'
         onClick={increasePopulation}>
         one up
       </button>

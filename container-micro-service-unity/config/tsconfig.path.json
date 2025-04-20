@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "../src",
+    "baseUrl": "../lib",
     "paths": {
       "@/*": ["./*"],
       "@assets/*": ["assets/*"],
@@ -15,5 +15,5 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["../src"]
+  "include": ["../lib"]
 }
