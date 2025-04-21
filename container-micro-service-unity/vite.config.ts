@@ -60,6 +60,10 @@ export default () => {
           replacement: path.resolve(__dirname, 'lib/store'),
         },
         {
+          find: '@styles',
+          replacement: path.resolve(__dirname, 'lib/styles'),
+        },
+        {
           find: '@utils',
           replacement: path.resolve(__dirname, 'lib/utils'),
         },

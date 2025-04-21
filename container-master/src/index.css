@@ -1,8 +1,8 @@
-@import './assets/fonts/fonts.css';
+@import '@styles/font.css';
 @import 'tailwindcss';
 
 @theme {
-  --font-display: 'Pretendard-ExtraBold', 'sans-serif';
+  --font-pretendard: 'Pretendard', 'sans-serif';
 
   /* --font-display: 'Satoshi', 'sans-serif';
   --breakpoint-3xl: 1920px;
@@ -26,6 +26,15 @@
     --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
     --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
   } */
+}
+
+@layer base {
+  html,
+  body,
+  #root,
+  .app {
+    @apply font-pretendard text-base font-normal;
+  }
 }
 
 /* @layer theme {

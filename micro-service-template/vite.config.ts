@@ -67,6 +67,10 @@ export default ({ mode }: { mode: string }) => {
           replacement: path.resolve(__dirname, 'src/store'),
         },
         {
+          find: '@styles',
+          replacement: path.resolve(__dirname, 'src/styles'),
+        },
+        {
           find: '@utils',
           replacement: path.resolve(__dirname, 'src/utils'),
         },

@@ -1,5 +1,9 @@
-@import "tailwindcss";
+@import '@styles/font.css';
+@import 'tailwindcss';
+
 @theme {
+  --font-pretendard: 'Pretendard', 'sans-serif';
+
   /* --font-display: 'Satoshi', 'sans-serif';
   --breakpoint-3xl: 1920px;
   --color-avocado-100: oklch(0.99 0 0);
@@ -22,6 +26,15 @@
     --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
     --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
   } */
+}
+
+@layer base {
+  html,
+  body,
+  #root,
+  .app {
+    @apply font-pretendard text-base font-normal;
+  }
 }
 
 /* @layer theme {
