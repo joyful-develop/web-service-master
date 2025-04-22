@@ -4,12 +4,18 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import svgr from 'vite-plugin-svgr';
+import topLevelAwait from 'vite-plugin-top-level-await';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default () => {
   return defineConfig({
     plugins: [
       react(),
+      tsconfigPaths(),
+      tailwindcss(),
+      topLevelAwait(),
+      svgr(),
       dts({
         insertTypesEntry: true,
         copyDtsFiles: true,
@@ -18,8 +24,6 @@ export default () => {
         exclude: ['node_modules', 'dist', '**/*.test.ts*', './lib/vite-env.d.ts'],
         rollupTypes: true,
       }),
-      tsconfigPaths(),
-      tailwindcss(),
     ],
     resolve: {
       alias: [

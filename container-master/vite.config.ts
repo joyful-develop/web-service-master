@@ -4,6 +4,8 @@ import federation from '@originjs/vite-plugin-federation';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
+import svgr from 'vite-plugin-svgr';
+import topLevelAwait from 'vite-plugin-top-level-await';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default ({ mode }: { mode: string }) => {
@@ -19,6 +21,8 @@ export default ({ mode }: { mode: string }) => {
       react(),
       tsconfigPaths(),
       tailwindcss(),
+      topLevelAwait(),
+      svgr(),
       federation({
         name: 'host-app',
         remotes: {
@@ -100,24 +104,12 @@ export default ({ mode }: { mode: string }) => {
             let ext: string = fileNames.length > 0 ? fileNames[fileNames.length - 1] : '';
             if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
               ext = 'images';
+            } else if (/woff|woff2/i.test(ext)) {
+              ext = 'fonts';
             }
             return `assets/${ext}/[name]-[hash][extname]`;
           },
-          chunkFileNames: (chunkInfo) => {
-            const is_manual_chunk = ['core', 'chart', 'quill', 'datepicker', 'moment', 'jsoneditor'].some((el) =>
-              chunkInfo.name.startsWith(el)
-            );
-            if (is_manual_chunk) {
-              return `js/[name].js`;
-            }
-            return `js/[name]-[hash].js`;
-          },
-          manualChunks: (id) => {
-            if (id.includes('node_modules')) {
-              const module = id.split('mode_modules/').pop()?.split('/')[0];
-              return `vendor-${module}`;
-            }
-          },
+          chunkFileNames: 'assets/[name]-[hash].js',
         },
       },
     },
