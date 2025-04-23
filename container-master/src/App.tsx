@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { AppSettings } from '@/appSettings.js';
+import SideBar from '@/components/layout/sideBar/sideBar.tsx';
+import { AppSettings } from '@/features/appSettings/appSettings.js';
 import Content from '@components/layout/content/index.tsx';
 import Footer from '@components/layout/footer/index.tsx';
 import Header from '@components/layout/header/index.tsx';
@@ -76,11 +77,12 @@ function App() {
         appDarkMode,
         hasScroll,
         handleSetAppClass,
+        handleSetAppDarkMode,
         handleSetAppTheme,
       }}>
       <div>
         <Header />
-        <Sidebar />
+        <SideBar />
         <Content />
         <Footer />
       </div>

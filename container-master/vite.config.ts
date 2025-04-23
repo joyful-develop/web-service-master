@@ -91,10 +91,6 @@ export default ({ mode }: { mode: string }) => {
       outDir: path.resolve(__dirname, './dist'),
       emptyOutDir: true,
       sourcemap: true,
-      modulePreload: false,
-      target: 'esnext',
-      minify: false,
-      cssCodeSplit: false,
       rollupOptions: {
         output: {
           entryFileNames: 'assets/[name]-[hash].js',
@@ -119,7 +115,7 @@ export default ({ mode }: { mode: string }) => {
       open: true,
       proxy: {
         '/api': {
-          target: env.VITE_APP_SERVER_URL,
+          target: env.VITE_APP_PROXY_TARGET,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
           // secure: false,

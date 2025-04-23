@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { AppSettings } from '@/appSettings.js';
+import { AppSettings } from '@/features/appSettings/appSettings.js';
 
 function Content() {
   return (

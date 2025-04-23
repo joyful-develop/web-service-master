@@ -92,10 +92,6 @@ export default ({ mode }: { mode: string }) => {
       outDir: path.resolve(__dirname, './dist'),
       emptyOutDir: true,
       sourcemap: true,
-      modulePreload: false,
-      target: 'esnext',
-      minify: false,
-      cssCodeSplit: false,
       rollupOptions: {
         output: {
           entryFileNames: 'assets/[name]-[hash].js',
