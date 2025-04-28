@@ -30,7 +30,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "typeRoots": ["node_modules/@types", "@types"]
   },
   "include": ["../src"],
   "exclude": ["../node_modules"],

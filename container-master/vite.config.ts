@@ -1,12 +1,13 @@
 import path from 'path';
 
-import federation from '@originjs/vite-plugin-federation';
-import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 import svgr from 'vite-plugin-svgr';
 import topLevelAwait from 'vite-plugin-top-level-await';
 import tsconfigPaths from 'vite-tsconfig-paths';
+
+import federation from '@originjs/vite-plugin-federation';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
 
 export default ({ mode }: { mode: string }) => {
   const env = {
@@ -38,44 +39,32 @@ export default ({ mode }: { mode: string }) => {
           replacement: path.resolve(__dirname, 'src'),
         },
         {
-          find: '@assets',
-          replacement: path.resolve(__dirname, 'src/assets'),
+          find: '@app',
+          replacement: path.resolve(__dirname, 'src/app'),
         },
         {
-          find: '@components',
-          replacement: path.resolve(__dirname, 'src/components'),
-        },
-        {
-          find: '@context',
-          replacement: path.resolve(__dirname, 'src/context'),
+          find: '@entities',
+          replacement: path.resolve(__dirname, 'src/entities'),
         },
         {
           find: '@features',
           replacement: path.resolve(__dirname, 'src/features'),
         },
         {
-          find: '@hooks',
-          replacement: path.resolve(__dirname, 'src/hooks'),
-        },
-        {
           find: '@pages',
           replacement: path.resolve(__dirname, 'src/pages'),
         },
         {
-          find: '@services',
-          replacement: path.resolve(__dirname, 'src/services'),
+          find: '@sharded',
+          replacement: path.resolve(__dirname, 'src/sharded'),
         },
         {
-          find: '@store',
-          replacement: path.resolve(__dirname, 'src/store'),
+          find: '@types',
+          replacement: path.resolve(__dirname, 'src/types'),
         },
         {
-          find: '@styles',
-          replacement: path.resolve(__dirname, 'src/styles'),
-        },
-        {
-          find: '@utils',
-          replacement: path.resolve(__dirname, 'src/utils'),
+          find: '@widgets',
+          replacement: path.resolve(__dirname, 'src/widgets'),
         },
       ],
       extensions: [],

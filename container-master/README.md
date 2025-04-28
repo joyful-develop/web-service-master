@@ -17,90 +17,47 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
     - index.html과 같은 정적 파일들이 저장되는 폴더
     - 컴파일이 필요 없는 파일들이 위치하는 폴더
 
-### `src\assets`
+### `src\app`
 
-    - 이미지 혹은 폰트와 같은 파일들이 저장되는 폴더
+    - 전체 app 의 로직이 초기화 되는 곳으로, app 의 entry point 역할.
+        1. 사용 가능 : shared, entities, features, widgets, pages
+        2. index.ts 파일에서 외부에서 사용하는 기능들만 export
+        3. 프로바이더, 라우터, 전역 스타일, 타입 등
 
-### `src\components`
+#### `src\entities`
 
-    - 유형별로 분류하여 레이아웃(래퍼, 탐색), 폼 구성요소, 버튼 등과 같은 글로벌 공유/재사용 가능 구성요소를 저장하는는 폴더
-
-### `src\components\forms`
-
-    - TextField, Select 와 같은 공통 컨포넌트를 저장하는 폴더
-    - 각 공통 컨포넌트 폴더의 구성 파일
-        1. 실제 React 구성 요소 파일(.ts)
-        2. 구성요서에 대한 Styled componets 파일(.styles.ts)
-        3. 테스트 파일(.test.ts)
-        4. Storybook 파일(.stories.ts)
-
-### `src\components\layout`
-
-    - header, footer, navigation/NavBar, content 와 같은 layout 구성 컨포넌트를 저장하는 폴더
-    - 각 layout 구성 컨포넌트 폴더의 구성 파일
-        1. 실제 React 구성 요소 파일(.ts)
-        2. 구성요서에 대한 Styled componets 파일(.styles.ts)
-        3. 테스트 파일(.test.ts)
-        4. Storybook 파일(.stories.ts)
-
-### `src\components\routing`
-
-    - PrivateRoute 와 같은 라우터 컨포넌트를 저장하는 폴더
-    - 각 라우터 컨포넌트 폴더의 구성 파일
-        1. 실제 React 구성 요소 파일(.ts)
-        2. 테스트 파일(.test.ts)
-
-#### `src\context`
-
-    - context API로 프로젝트를 작업하는 경우 관련 API를 담아놓는 폴더
+    - 도메인 모델(데이터 영역)과 관련된 모든 것을 저장. (도메인 모델, 상태 관리, API 통신 등)
+        1. 사용 가능 : shared
+        2. index.ts 파일에서 외부에서 사용하는 기능들만 export
+        3. API 모듈, 상태 관리, 타입 정의
 
 ### `src\features`
 
-    - views 폴더와는 다르게 기능별로 분류하여 공통 모듈을 저장하는 폴더
-    - 각 layout 구성 컨포넌트 폴더의 구성 파일
-        1. 실제 React 구성 요소 파일(.ts)
-        2. 구성요서에 대한 Styled componets 파일(.styles.ts)
-        3. 테스트 파일(.test.ts)
-        4. Storybook 파일(.stories.ts)
-
-### `src\hooks`
-
-    - 커스텀 훅이 저장되는 폴더
+    - 특정 기능을 구현하는데 필요한 모든 것을 저장. (독립적인 비즈니스 로직과 UI 포함)
+        1. 사용 가능 : shared, entities
+        2. index.ts 파일에서 외부에서 사용하는 기능들만 export
+        3. API 통신 모듈, 상태 관리, 타입 정의, UI 컴포넌트, 유틸리티 함수, 기타 필요한 리소스 등
 
 ### `src\pages`
 
-    - 도메인 기준으로 분류하여 라우팅이 적용되는 페이지와 해당 도메인에만 사용되는 특정 폼, 모달, 버튼 등의 구성 요소가 저장되는 폴더
-    - 각 뷰 폴더의 구성 파일
-        1. 실제 React 구성 요소 파일(.ts)
-        2. 구성요서에 대한 Styled componets 파일(.styles.ts)
-        3. Storybook 파일(.stories.ts)
+    - 라우트 구조에서 사용하는 app 페이지를 저장.
+        1. 사용 가능 : shared, entities, features, widgets
+        2. index.ts 파일에서 외부에서 사용하는 기능들만 export
+        3. ui(전용 하위 컴포넌트들), hooks(전용 커스텀 훅), 기타 필요한 리소스(css 등) 등
 
-#### `src\services`
+### `src\shared`
 
-    - LocalStorage 제어하는 JavaScript 모듈 등이 저장되는 폴더
-    - 각 JavaScript 모듈 폴더의 구성 파일
-        1. 실제 JavaScript 모듈 파일(.service.ts)
-        2. 테스트 파일(.test.ts)
+    - 특정한 비즈니스 로직에 종속되지 않고 재사용 가능한 컴포넌트와 유틸리티들을 저장
+        1. 사용 가능 : 없음
+        2. index.ts 파일에서 외부에서 사용하는 컴포넌트들만 export
+        3. 커스텀 훅, 스타일 파일, 타입 정의, 컴포넌트 (Button, Input 등), 유틸리티 함수
 
-#### `src\store`
+### `src\widgets`
 
-    - 글로벌 데이터 저장소를 제어하는 모듈이 저장되는 폴더더
-    - 각 JavaScript 모듈 폴더의 구성 파일
-        1. 슬라이스 모듈 파일(.slice.js)
-        2. 액션 모듈 파일(.actions.js)
-        3. 테스트 파일(.test.ts)
-
-### `src\styles`
-
-    - css 파일들이 포함되는 폴더
-    - 기능별로 하위 폴더를 추가로 구성하여 분류
-
-### `src\utils`
-
-    - 상수(constants), 주요 기능별 공통 함수(helpers) 와 같은 정규표현식 패턴이나 공통함수 등 공통으로 사용하는 유틸 파일들이 저장되는 폴더
-    - 각 공통 유틸리티 폴더의 구성 파일
-        1. 상수 파일(.sconstants.ts)
-        2. 주요 기능별 공통 함수 파일(.helpers.ts)
+    - 재사용 가능한 UI 구성 요소를 저장. (페이지에서 사용하는 재사용 가능한 구성 요소)
+        1. 사용 가능 : shared, entities, features
+        2. index.ts 파일에서 외부에서 사용하는 컴포넌트들만 export
+        3. 컴포넌트, 스타일, 전용 라이브리리(util) 등
 
 ## VSCode 확장 기능 설치
 
@@ -108,6 +65,7 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
     - Prettier - Code formatter
     - PostCSS Language Support
     - Tailwind CSS IntelliSense
+    - Tailwind Twin IntelliSense
 
 ## 실행 전 확인
 

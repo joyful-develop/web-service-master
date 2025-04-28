@@ -1,4 +1,3 @@
-import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 import prettierPlugin from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
@@ -6,6 +5,8 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+
+import js from '@eslint/js';
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -58,7 +59,7 @@ export default tseslint.config(
       'import/order': [
         'error',
         {
-          groups: ['type', 'builtin', 'external', 'internal', ['sibling', 'parent', 'index'], 'unknown'],
+          groups: ['builtin', 'external', 'internal', ['sibling', 'parent', 'index'], 'type', 'unknown'],
           pathGroups: [
             {
               pattern: 'react',
@@ -81,49 +82,14 @@ export default tseslint.config(
               position: 'after',
             },
             {
-              pattern: '@styles/*',
+              pattern: '@/**/*',
               group: 'internal',
-              position: 'before',
+              position: 'after',
             },
             {
-              pattern: '@hooks/*',
+              pattern: '@*/**/*',
               group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@store/*',
-              group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@features/*',
-              group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@components/*',
-              group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@pages/*',
-              group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@pages/*',
-              group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@context/*',
-              group: 'internal',
-              position: 'before',
-            },
-            {
-              pattern: '@services/*',
-              group: 'internal',
-              position: 'before',
+              position: 'after',
             },
           ],
           'newlines-between': 'always',
@@ -131,6 +97,29 @@ export default tseslint.config(
             order: 'asc',
             caseInsensitive: true,
           },
+          pathGroupsExcludedImportTypes: [],
+        },
+      ],
+      'import/no-restricted-paths': [
+        'error',
+        {
+          zones: [
+            { target: './src/entities', from: './src/app' },
+            { target: './src/entities', from: './src/features' },
+            { target: './src/entities', from: './src/pages' },
+            { target: './src/entities', from: './src/widgets' },
+            { target: './src/features', from: './src/app' },
+            { target: './src/features', from: './src/pages' },
+            { target: './src/features', from: './src/widgets' },
+            { target: './src/pages', from: './src/app' },
+            { target: './src/shared', from: './src/app' },
+            { target: './src/shared', from: './src/entities' },
+            { target: './src/shared', from: './src/features' },
+            { target: './src/shared', from: './src/pages' },
+            { target: './src/shared', from: './src/widgets' },
+            { target: './src/widgets', from: './src/app' },
+            { target: './src/widgets', from: './src/pages' },
+          ],
         },
       ],
     },
