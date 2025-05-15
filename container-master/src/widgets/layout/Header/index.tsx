@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { AppSettings } from '@features/appSettings/appSettings.js';
 
-import styles from './style.css.ts';
+import style from './style.ts';
 
 function Header() {
   return (
@@ -15,7 +15,7 @@ function Header() {
               <span className='icon-bar'></span>
               <span className='icon-bar'></span>
             </button>
-            <Link to='/' className={`${styles.flexCenter}`}>
+            <Link to='/' className={`${style.flexCenter}`}>
               <span className='text-18'></span> <b>Color</b> Admin
             </Link>
           </div>

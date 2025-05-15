@@ -1,6 +1,7 @@
-@import '@app/styles/font.css';
 @import 'tailwindcss';
+@plugin "@tailwindcss/forms";
 
+@import '@app/styles/font.css';
 @config "../../../tailwind.config.ts";
 
 @theme {

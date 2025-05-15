@@ -66,6 +66,7 @@ Mirco Frontend 방식으로 구성된 단위 어플리케이션을 통하여 서
     - PostCSS Language Support
     - Tailwind CSS IntelliSense
     - Tailwind Twin IntelliSense
+    - Tailwind Fold
 
 ## 실행 전 확인
 
