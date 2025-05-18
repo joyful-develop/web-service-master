@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { AppSettings } from '@/features/appSettings/appSettings.js';
 
-import Content from '@widgets/layout/content/index.tsx';
+import Content from '@widgets/layout/content/index3.tsx';
 import Footer from '@widgets/layout/footer/index.tsx';
 import Header from '@widgets/layout/Header/index.tsx';
-import SideBar from '@widgets/layout/sideBar/sideBar.tsx';
+import SideBar from '@widgets/layout/sideBar/sideBar2.tsx';
 
 function Layout() {
   const [appTheme] = useState('');
@@ -83,8 +83,10 @@ function Layout() {
       }}>
       <div>
         <Header />
-        <SideBar />
-        <Content />
+        <div className='flex'>
+          <SideBar />
+          <Content />
+        </div>
         <Footer />
       </div>
     </AppSettings.Provider>
