@@ -1,5 +1,6 @@
 import path from 'path';
 
+import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, loadEnv } from 'vite';
 import svgr from 'vite-plugin-svgr';
 import topLevelAwait from 'vite-plugin-top-level-await';
@@ -24,6 +25,7 @@ export default ({ mode }: { mode: string }) => {
       tailwindcss(),
       topLevelAwait(),
       svgr(),
+      visualizer(),
       federation({
         name: 'host-app',
         remotes: {
@@ -95,6 +97,19 @@ export default ({ mode }: { mode: string }) => {
             return `assets/${ext}/[name]-[hash][extname]`;
           },
           chunkFileNames: 'assets/[name]-[hash].js',
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              const module = id.split('node_modules/').pop()?.split('/')[0];
+              if (
+                module === 'react-dom' ||
+                module === 'react-router' ||
+                module === 'headlessui' ||
+                module === 'floating-ui'
+              ) {
+                return `vendor/${module}`;
+              }
+            }
+          },
         },
       },
     },
