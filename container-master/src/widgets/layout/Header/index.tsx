@@ -1,32 +1,3 @@
-// import { Link } from 'react-router-dom';
-
-// import { AppSettings } from '@features/appSettings/appSettings.js';
-
-// import style from './style.ts';
-
-// function Header() {
-//   return (
-//     <AppSettings.Consumer>
-//       {({ toggleAppSidebarEndMobile, appHeaderInverse }) => (
-//         <div id='header' className={'bg-red-200 pt-80'} data-bs-theme={appHeaderInverse ? 'dark' : ''}>
-//           <div className='mix-w-md flex w-220 min-w-100 items-center'>
-//             <button type='button' className='navbar-mobile-toggler' onClick={toggleAppSidebarEndMobile}>
-//               <span className='icon-bar'></span>
-//               <span className='icon-bar'></span>
-//               <span className='icon-bar'></span>
-//             </button>
-//             <Link to='/' className={`${style.flexCenter}`}>
-//               <span className='text-18'></span> <b>Color</b> Admin
-//             </Link>
-//           </div>
-//         </div>
-//       )}
-//     </AppSettings.Consumer>
-//   );
-// }
-
-// export default Header;
-
 import {
   Disclosure,
   DisclosureButton,
@@ -36,7 +7,7 @@ import {
   MenuItem,
   MenuItems,
 } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, BellIcon, UserCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -52,7 +23,7 @@ function classNames(...classes: string[]) {
 export default function Example() {
   return (
     <Disclosure as='nav' className='bg-gray-800'>
-      <div className='mx-auto max-w-7xl px-8 sm:px-24 lg:px-32'>
+      <div className='max-w-container mx-auto px-8 sm:px-24 lg:px-32'>
         <div className='relative flex h-64 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
             {/* Mobile menu button*/}
@@ -100,14 +71,15 @@ export default function Example() {
             {/* Profile dropdown */}
             <Menu as='div' className='relative ml-12'>
               <div>
-                <MenuButton className='relative flex rounded-full bg-gray-800 text-sm focus:ring-8 focus:ring-white focus:ring-offset-8 focus:ring-offset-gray-800 focus:outline-hidden'>
+                <MenuButton className='hover:text-whit relative flex rounded-full bg-gray-800 text-sm text-gray-400 focus:ring-8 focus:ring-white focus:ring-offset-8 focus:ring-offset-gray-800 focus:outline-hidden'>
                   <span className='absolute -inset-6' />
                   <span className='sr-only'>Open user menu</span>
-                  <img
+                  <UserCircleIcon aria-hidden='true' className='size-24'></UserCircleIcon>
+                  {/* <img
                     alt=''
                     src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
                     className='size-32 rounded-full'
-                  />
+                  /> */}
                 </MenuButton>
               </div>
               <MenuItems
