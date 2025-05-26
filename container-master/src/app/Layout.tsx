@@ -80,13 +80,22 @@ function Layout() {
         handleSetAppDarkMode,
         handleSetAppTheme,
       }}>
-      <div>
-        <Header />
-        <div className='flex'>
-          <SideBar />
-          <Content />
+      <div className='grid h-screen grid-rows-[auto_1fr_auto]'>
+        <div className='h-60 bg-black text-white'>Header</div>
+        {/* <Header /> */}
+        <div className='grid grid-cols-[auto_1fr_auto]'>
+          <div className='w-150 bg-blue-100 text-black'>SideBar(Left)</div>
+          {/* <SideBar /> */}
+          <div className='grid grid-rows-[auto_1fr_auto]'>
+            <div className='h-150 bg-yellow-100 text-black'>SideBar(Top)</div>
+            <div className='max-h-500 overflow-y-auto bg-red-300'>Contents</div>
+            {/* <Content /> */}
+            <div className='h-150 bg-yellow-100 text-black'>SideBar(Bottom)</div>
+          </div>
+          <div className='w-150 bg-blue-100 text-black'>SideBar(Right)</div>
         </div>
-        <Footer />
+        <div className='h-60 bg-black text-white'>Header</div>
+        {/* <Footer /> */}
       </div>
     </AppSettings.Provider>
   );

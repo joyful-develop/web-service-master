@@ -1,6 +1,6 @@
 export default function DefaultFooter() {
   return (
-    <footer className='max-w-container mx-auto mt-128 w-full px-16 sm:px-24 lg:px-32' aria-labelledby='footer-heading'>
+    <footer className='max-w-container mx-auto w-full px-16 sm:px-24 lg:px-32' aria-labelledby='footer-heading'>
       <div className='items-centers grid grid-cols-1 justify-between gap-16 border-t border-gray-100 py-24 md:grid-cols-2'>
         <p className='text-sm/24 text-gray-600 max-md:text-center'>
           © 2024

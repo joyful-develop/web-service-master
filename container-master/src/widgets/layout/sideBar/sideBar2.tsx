@@ -1,6 +1,6 @@
 export default function DefaultSideBar() {
   return (
-    <aside className='flex h-screen w-256 flex-col justify-between bg-white shadow-md'>
+    <aside className='flex w-256 flex-col justify-between bg-white shadow-md'>
       <div className='p-24'>
         <h1 className='mb-16 text-xl font-bold'>Chatbot Dashboard</h1>
         <nav className='space-y-8'>
