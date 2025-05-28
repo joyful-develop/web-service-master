@@ -69,6 +69,12 @@ function Layout() {
     };
   }, [appTheme, appDarkMode]);
 
+  const maxHeight = 'height_60_60';
+  const maxHeightVariants = {
+    height_60_60: 'max-h-[calc(100vh-120px)]',
+    height_30_60: 'max-h-[calc(100vh-90px)]',
+  };
+
   return (
     <AppSettings.Provider
       value={{
@@ -82,20 +88,253 @@ function Layout() {
       }}>
       <div className='grid h-screen grid-rows-[auto_1fr_auto]'>
         <div className='h-60 bg-black text-white'>Header</div>
-        {/* <Header /> */}
-        <div className='grid grid-cols-[auto_1fr_auto]'>
-          <div className='w-150 bg-blue-100 text-black'>SideBar(Left)</div>
-          {/* <SideBar /> */}
-          <div className='grid grid-rows-[auto_1fr_auto]'>
-            <div className='h-150 bg-yellow-100 text-black'>SideBar(Top)</div>
-            <div className='max-h-500 overflow-y-auto bg-red-300'>Contents</div>
-            {/* <Content /> */}
-            <div className='h-150 bg-yellow-100 text-black'>SideBar(Bottom)</div>
+        <div className={`grid ${maxHeightVariants[maxHeight]} grid-cols-[auto_1fr_auto]`}>
+          <div className='w-150 overflow-auto bg-blue-100 text-black'>
+            <div>
+              SideBar(Left)
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              SideBar(Left)
+            </div>
           </div>
-          <div className='w-150 bg-blue-100 text-black'>SideBar(Right)</div>
+          <div className={`grid ${maxHeightVariants[maxHeight]} grid-rows-[auto_1fr_auto]`}>
+            <div className='h-150 overflow-auto bg-yellow-100 text-black'>
+              <div>
+                SideBar(Top)
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                SideBar(Top)
+              </div>
+            </div>
+            <div className={`overflow-auto bg-red-300`}>
+              <div>
+                Contents
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                Contents
+              </div>
+            </div>
+            <div className='h-150 overflow-auto bg-yellow-100 text-black'>
+              <div>
+                SideBar(Bottom)
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                SideBar(Bottom)
+              </div>
+            </div>
+          </div>
+          <div className='w-150 overflow-auto bg-blue-100 text-black'>
+            <div>
+              SideBar(Right)
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              SideBar(Right)
+            </div>
+          </div>
         </div>
-        <div className='h-60 bg-black text-white'>Header</div>
-        {/* <Footer /> */}
+        <div className='h-60 bg-black text-white'>Footer</div>
       </div>
     </AppSettings.Provider>
   );
