@@ -4,31 +4,28 @@
 @import '@app/styles/font.css';
 @config "../../../tailwind.config.ts";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
 @theme {
   --font-pretendard: 'Pretendard', 'sans-serif';
 
-  /* --font-display: 'Satoshi', 'sans-serif';
-  --breakpoint-3xl: 1920px;
-  --color-avocado-100: oklch(0.99 0 0);
-  --color-avocado-200: oklch(0.98 0.04 113.22);
-  --color-avocado-300: oklch(0.94 0.11 115.03);
-  --color-avocado-400: oklch(0.92 0.19 114.08);
-  --color-avocado-500: oklch(0.84 0.18 117.33);
-  --color-avocado-600: oklch(0.53 0.12 118.34);
-  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-  --ease-snappy: cubic-bezier(0.2, 0, 0, 1); */
-  /* :root {
-    --font-display: "Satoshi", "sans-serif";
-    --breakpoint-3xl: 1920px;
-    --color-avocado-100: oklch(0.99 0 0);
-    --color-avocado-200: oklch(0.98 0.04 113.22);
-    --color-avocado-300: oklch(0.94 0.11 115.03);
-    --color-avocado-400: oklch(0.92 0.19 114.08);
-    --color-avocado-500: oklch(0.84 0.18 117.33);
-    --color-avocado-600: oklch(0.53 0.12 118.34);
-    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  } */
+  --color-dark: oklch(0.2621 0.009 248.19);
+  --color-dark-0: oklch(0.216 0.006 56.043);
+  --color-dark-1: oklch(0.268 0.007 34.298);
+  --color-dark-2: oklch(0.374 0.01 67.558);
+  --color-dark-3: oklch(0.444 0.011 73.639);
+
+  --color-light: oklch(0.985 0.002 247.839);
+  --color-light-0: var(--color-white);
+  --color-light-1: oklch(0.872 0.01 258.338);
+  --color-light-2: oklch(0.707 0.022 261.325);
+  --color-light-3: oklch(0.551 0.027 264.364);
 }
 
 @layer base {
@@ -36,10 +33,3 @@
     @apply font-pretendard text-base font-normal;
   }
 }
-
-@custom-variant dark (
-  /* 케이스 1: .dark 클래스를 사용할 때 */
-  &:where(.dark, .dark *),
-  /* 케이스 2: 시스템 다크모드 + data-theme="dark" 속성 사용할 때 */
-  &:where(:not(.light):is(:root[data-theme="dark"] *, :root[data-theme="dark"]))
-);

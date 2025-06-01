@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuItems,
 } from '@headlessui/react';
-import { Bars3Icon, BellIcon, UserCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, BellIcon, EllipsisVerticalIcon, UserCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -22,7 +22,7 @@ function classNames(...classes: string[]) {
 
 export default function Example() {
   return (
-    <Disclosure as='nav' className='bg-gray-800'>
+    <Disclosure as='nav' className='bg-light dark:bg-dark'>
       <div className='max-w-container mx-auto px-8 sm:px-24 lg:px-32'>
         <div className='relative flex h-64 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -66,6 +66,14 @@ export default function Example() {
               <span className='absolute -inset-6' />
               <span className='sr-only'>View notifications</span>
               <BellIcon aria-hidden='true' className='size-24' />
+            </button>
+
+            <button
+              type='button'
+              className='relative rounded-full bg-gray-800 p-4 text-gray-400 hover:text-white focus:ring-8 focus:ring-white focus:ring-offset-8 focus:ring-offset-gray-800 focus:outline-hidden'>
+              <span className='absolute -inset-6' />
+              <span className='sr-only'>View notifications</span>
+              <EllipsisVerticalIcon aria-hidden='true' className='size-24' />
             </button>
 
             {/* Profile dropdown */}
