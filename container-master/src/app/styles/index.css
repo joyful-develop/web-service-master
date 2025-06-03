@@ -16,16 +16,16 @@
   --font-pretendard: 'Pretendard', 'sans-serif';
 
   --color-dark: oklch(0.2621 0.009 248.19);
-  --color-dark-0: oklch(0.216 0.006 56.043);
+  --color-dark-0: var(--color-black);
   --color-dark-1: oklch(0.268 0.007 34.298);
   --color-dark-2: oklch(0.374 0.01 67.558);
   --color-dark-3: oklch(0.444 0.011 73.639);
 
   --color-light: oklch(0.985 0.002 247.839);
   --color-light-0: var(--color-white);
-  --color-light-1: oklch(0.872 0.01 258.338);
-  --color-light-2: oklch(0.707 0.022 261.325);
-  --color-light-3: oklch(0.551 0.027 264.364);
+  --color-light-1: oklch(0.967 0.003 264.542);
+  --color-light-2: oklch(0.928 0.006 264.531);
+  --color-light-3: oklch(0.872 0.01 258.338);
 }
 
 @layer base {

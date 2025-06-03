@@ -28,8 +28,8 @@ function classNames(...classes: string[]) {
 export default function Example() {
   return (
     <Disclosure as='nav' className='bg-light dark:bg-dark'>
-      <div className='max-w-container mx-auto w-full px-8 sm:px-0 lg:px-8'>
-        <div className='relative flex h-64 w-full items-center justify-between'>
+      <div className='max-w-container mx-auto px-8 sm:px-24 lg:px-32'>
+        <div className='relative flex h-64 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
             {/* Mobile menu button*/}
             <DisclosureButton className='group relative inline-flex items-center justify-center rounded-md p-8 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-8 focus:ring-white focus:outline-hidden focus:ring-inset'>
@@ -39,7 +39,6 @@ export default function Example() {
               <XMarkIcon aria-hidden='true' className='hidden size-24 group-data-open:block' />
             </DisclosureButton>
           </div>
-          {/* 회사 로그 */}
           <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
             <div className='flex shrink-0 items-center'>
               <img
@@ -47,15 +46,6 @@ export default function Example() {
                 src='https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500'
                 className='h-32 w-auto'
               />
-            </div>
-            <div className='text-dark dark:text-light hidden sm:ml-12 sm:block'>
-              <p className='text-3xl font-bold text-red-600'>G-FDC</p>
-            </div>
-            <div className='text-dark dark:text-light hidden pt-10 sm:ml-4 sm:block'>
-              <p className='text-sm'>(Global Fault Detection & Classification)</p>
-            </div>
-            <div className='text-dark-3/50 dark:text-light hidden pt-10 sm:ml-4 sm:block'>
-              <p className='text-sm'>[3.1.202505121]</p>
             </div>
             <div className='hidden sm:ml-24 sm:block'>
               <div className='flex space-x-16'>
@@ -75,66 +65,21 @@ export default function Example() {
             </div>
           </div>
           <div className='absolute inset-y-0 right-0 flex items-center pr-8 sm:static sm:inset-auto sm:ml-24 sm:pr-0'>
-            <Popover>
-              <PopoverButton className={`relative rounded-full p-4 ${sytle.headButtonHoverFocus}`}>
-                <span className='absolute -inset-6' />
-                <span className='sr-only'>View notifications</span>
-                <BellIcon aria-hidden='true' className='size-24' />
-              </PopoverButton>
-              <PopoverPanel
-                transition
-                anchor='bottom'
-                className='divide-y divide-white/5 rounded-xl bg-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0'>
-                <div className='p-3'>
-                  <a className='hover:bg-dark block rounded-lg px-3 py-2 transition' href='#'>
-                    <p className='text-dark'>Insights</p>
-                    <p className='text-dark'>Measure actions your users take</p>
-                  </a>
-                  <a className='hover:bg-dark block rounded-lg px-3 py-2 transition' href='#'>
-                    <p className='text-dark'>Automations</p>
-                    <p className='text-dark'>Create your own targeted content</p>
-                  </a>
-                  <a className='hover:bg-dark block rounded-lg px-3 py-2 transition' href='#'>
-                    <p className='text-dark'>Reports</p>
-                    <p className='text-dark'>Keep track of your growth</p>
-                  </a>
-                </div>
-                <div className='p-3'>
-                  <a className='block rounded-lg px-3 py-2 transition hover:bg-white/5' href='#'>
-                    <p className='font-semibold text-white'>Documentation</p>
-                    <p className='text-white/50'>Start integrating products and tools</p>
-                  </a>
-                </div>
-              </PopoverPanel>
-            </Popover>
+            <button
+              type='button'
+              className='relative rounded-full bg-gray-800 p-4 text-gray-400 hover:text-white focus:ring-8 focus:ring-white focus:ring-offset-8 focus:ring-offset-gray-800 focus:outline-hidden'>
+              <span className='absolute -inset-6' />
+              <span className='sr-only'>View notifications</span>
+              <BellIcon aria-hidden='true' className='size-24' />
+            </button>
 
-            <Popover>
-              <PopoverButton className={`relative ml-2 rounded-full p-4 ${sytle.headButtonHoverFocus}`}>
-                <span className='absolute -inset-6' />
-                <span className='sr-only'>Open user menu</span>
-                <UserCircleIcon aria-hidden='true' className='size-24'></UserCircleIcon>
-              </PopoverButton>
-              <PopoverPanel
-                transition
-                anchor='bottom'
-                className='divide-y divide-white/5 rounded-xl bg-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0'>
-                <div className='hover:bg-dark block rounded-lg px-3 py-2 transition'>
-                  <p className='text-dark'>User Profile</p>
-                  <p className='text-dark'>사용자 프로필</p>
-                </div>
-                <div className='p-3'>
-                  <p className='text-dark font-semibold'>User Profile</p>
-                  <p className='text-dark/50'>사용자 프로필</p>
-                </div>
-              </PopoverPanel>
-            </Popover>
-
-            <Menu as='div' className='relative ml-2'>
+            {/* Profile dropdown */}
+            <Menu as='div' className='relative ml-12'>
               <div>
-                <MenuButton className={`relative flex rounded-full p-4 ${sytle.headButtonHoverFocus}`}>
+                <MenuButton className='hover:text-whit relative flex rounded-full bg-gray-800 text-sm text-gray-400 focus:ring-8 focus:ring-white focus:ring-offset-8 focus:ring-offset-gray-800 focus:outline-hidden'>
                   <span className='absolute -inset-6' />
-                  <span className='sr-only'>View notifications</span>
-                  <EllipsisVerticalIcon aria-hidden='true' className='size-24' />
+                  <span className='sr-only'>Open user menu</span>
+                  <UserCircleIcon aria-hidden='true' className='size-24'></UserCircleIcon>
                 </MenuButton>
               </div>
               <MenuItems
@@ -163,6 +108,47 @@ export default function Example() {
                 </MenuItem>
               </MenuItems>
             </Menu>
+
+            <div className='absolute inset-y-0 right-0 flex items-center pr-8 sm:static sm:inset-auto sm:ml-24 sm:pr-0'>
+              <Popover>
+                <PopoverButton className='text-dark block text-sm/6 focus:outline-none data-active:text-white data-focus:outline data-focus:outline-white data-hover:text-white'>
+                  <span className='absolute -inset-6' />
+                  <span className='sr-only'>Open user menu</span>
+                  <UserCircleIcon aria-hidden='true' className='size-24'></UserCircleIcon>
+                </PopoverButton>
+                <PopoverPanel
+                  transition
+                  anchor='bottom'
+                  className='divide-y divide-white/5 rounded-xl bg-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:--spacing(5)] data-closed:-translate-y-1 data-closed:opacity-0'>
+                  <div className='p-3'>
+                    <a className='block rounded-lg px-3 py-2 transition hover:bg-white/5' href='#'>
+                      <p className='text-dark'>Insights</p>
+                      <p className='text-dark'>Measure actions your users take</p>
+                    </a>
+                    <a className='block rounded-lg px-3 py-2 transition hover:bg-white/5' href='#'>
+                      <p className='text-dark'>Automations</p>
+                      <p className='text-dark'>Create your own targeted content</p>
+                    </a>
+                    <a className='block rounded-lg px-3 py-2 transition hover:bg-white/5' href='#'>
+                      <p className='text-dark'>Reports</p>
+                      <p className='text-dark'>Keep track of your growth</p>
+                    </a>
+                  </div>
+                  <div className='p-3'>
+                    <a className='block rounded-lg px-3 py-2 transition hover:bg-white/5' href='#'>
+                      <p className='font-semibold text-white'>Documentation</p>
+                      <p className='text-white/50'>Start integrating products and tools</p>
+                    </a>
+                  </div>
+                </PopoverPanel>
+              </Popover>
+            </div>
+
+            <button type='button' className={`relative rounded-full p-4 ${sytle.headButtonHoverFocus}`}>
+              <span className='absolute -inset-6' />
+              <span className='sr-only'>View notifications</span>
+              <EllipsisVerticalIcon aria-hidden='true' className='size-24' />
+            </button>
           </div>
         </div>
       </div>
