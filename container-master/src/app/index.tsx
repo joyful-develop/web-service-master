@@ -6,8 +6,7 @@ import { AppSettings } from '@features/appSettings/appSettings.js';
 // import Content from '@widgets/layout/content/index3.tsx';
 // import Footer from '@widgets/layout/footer/index.tsx';
 import Header from '@widgets/layout/header/index.tsx';
-
-// import SideBar from '@widgets/layout/sideBar/sideBar2.tsx';
+import SideBar from '@widgets/layout/sideBar/sideBar3.tsx';
 
 function App() {
   const [appTheme] = useState('');
@@ -65,79 +64,12 @@ function App() {
         handleSetAppTheme,
       }}>
       <div className='grid h-screen w-full grid-rows-[auto_1fr_auto]'>
-        <div className='h-60 w-full bg-black text-white'>
+        <div className='h-content max-h-300 w-full bg-black text-white'>
           <Header />
         </div>
         <div className={`grid w-full ${maxHeightVariants[maxHeight]} grid-cols-[auto_1fr_auto]`}>
-          <div className='w-150 overflow-auto bg-blue-100 text-black'>
-            <div>
-              <ThemeChanger />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              SideBar(Left)
-            </div>
+          <div className='w-content max-w-300 overflow-auto bg-blue-100 text-black'>
+            <SideBar />
           </div>
           <div className={`grid w-full ${maxHeightVariants[maxHeight]} grid-rows-[auto_1fr_auto]`}>
             <div className='h-150 overflow-auto bg-yellow-100 text-black'>
@@ -246,7 +178,7 @@ function App() {
           </div>
           <div className='w-150 overflow-auto bg-blue-100 text-black'>
             <div>
-              SideBar(Right)
+              <ThemeChanger />
               <br />
               <br />
               <br />

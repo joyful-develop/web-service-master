@@ -32,7 +32,8 @@ export default function Example() {
         <div className='relative flex h-64 w-full items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
             {/* Mobile menu button*/}
-            <DisclosureButton className='group relative inline-flex items-center justify-center rounded-md p-8 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-8 focus:ring-white focus:outline-hidden focus:ring-inset'>
+            <DisclosureButton
+              className={`group relative inline-flex items-center justify-center rounded-md p-8 ${sytle.headButtonHoverFocus}`}>
               <span className='absolute -inset-2' />
               <span className='sr-only'>Open main menu</span>
               <Bars3Icon aria-hidden='true' className='block size-24 group-data-open:hidden' />
@@ -42,20 +43,20 @@ export default function Example() {
           {/* 회사 로그 */}
           <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
             <div className='flex shrink-0 items-center'>
-              <img
-                alt='Your Company'
-                src='https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500'
-                className='h-32 w-auto'
-              />
+              <img alt='Your Company' src='../../../app/styles/images/xyz.svg' className='h-32 w-auto' />
             </div>
-            <div className='text-dark dark:text-light hidden sm:ml-12 sm:block'>
-              <p className='text-3xl font-bold text-red-600'>G-FDC</p>
-            </div>
-            <div className='text-dark dark:text-light hidden pt-10 sm:ml-4 sm:block'>
-              <p className='text-sm'>(Global Fault Detection & Classification)</p>
-            </div>
-            <div className='text-dark-3/50 dark:text-light hidden pt-10 sm:ml-4 sm:block'>
-              <p className='text-sm'>[3.1.202505121]</p>
+            <div className='hidden sm:ml-12 sm:block'>
+              <div className='flex h-full flex-1'>
+                <div className='content-center'>
+                  <p className='text-2xl font-black text-red-600'>G-FDC</p>
+                </div>
+                <div className='ml-4 pt-12'>
+                  <p className='text-dark-3 dark:text-light-3 text-xs'>Global Fault Detection & Classification</p>
+                </div>
+                <div className='ml-4 pt-12'>
+                  <p className='text-dark-3 dark:text-light-3 text-xs'>(Ver. 3.1.202505121)</p>
+                </div>
+              </div>
             </div>
             <div className='hidden sm:ml-24 sm:block'>
               <div className='flex space-x-16'>
@@ -65,8 +66,10 @@ export default function Example() {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'rounded-md px-12 py-8 text-sm font-medium'
+                      item.current
+                        ? 'bg-light-3 dark:bg-dark-3 text-dark-0 dark:text-light-0'
+                        : 'bg-light dark:bg-dark text-dark dark:text-light hover:bg-light-2 hover:dark:bg-dark-2 hover:text-dark-0 hover:dark:text-light-0',
+                      'rounded-md px-8 py-4 text-sm font-medium'
                     )}>
                     {item.name}
                   </a>
@@ -111,7 +114,7 @@ export default function Example() {
             <Popover>
               <PopoverButton className={`relative ml-2 rounded-full p-4 ${sytle.headButtonHoverFocus}`}>
                 <span className='absolute -inset-6' />
-                <span className='sr-only'>Open user menu</span>
+                <span className='sr-only'>User profile</span>
                 <UserCircleIcon aria-hidden='true' className='size-24'></UserCircleIcon>
               </PopoverButton>
               <PopoverPanel
@@ -133,7 +136,7 @@ export default function Example() {
               <div>
                 <MenuButton className={`relative flex rounded-full p-4 ${sytle.headButtonHoverFocus}`}>
                   <span className='absolute -inset-6' />
-                  <span className='sr-only'>View notifications</span>
+                  <span className='sr-only'>Settings</span>
                   <EllipsisVerticalIcon aria-hidden='true' className='size-24' />
                 </MenuButton>
               </div>
@@ -176,8 +179,10 @@ export default function Example() {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-12 py-8 text-base font-medium'
+                item.current
+                  ? 'bg-light-3 dark:bg-dark-3 text-dark-0 dark:text-light-0'
+                  : 'bg-light dark:bg-dark text-dark dark:text-light hover:bg-light-2 hover:dark:bg-dark-2 hover:text-dark-0 hover:dark:text-light-0',
+                'block rounded-md px-8 py-4 text-base font-medium'
               )}>
               {item.name}
             </DisclosureButton>
