@@ -6,7 +6,7 @@ import { AppSettings } from '@features/appSettings/appSettings.js';
 // import Content from '@widgets/layout/content/index3.tsx';
 // import Footer from '@widgets/layout/footer/index.tsx';
 import Header from '@widgets/layout/header/index.tsx';
-import SideBar from '@widgets/layout/sideBar/sideBar3.tsx';
+import SideBar from '@widgets/layout/sideBar/sideBar2.tsx';
 
 function App() {
   const [appTheme] = useState('');

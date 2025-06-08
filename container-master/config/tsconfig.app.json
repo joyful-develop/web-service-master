@@ -30,6 +30,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    "baseUrl": "../",
+    "paths": {
+      "@/*": ["../src/*"]
+    },
     "outDir": "./dist",
     "typeRoots": ["node_modules/@types", "@types"]
   },

@@ -6,6 +6,7 @@
       "@app/*": ["app/*"],
       "@entities/*": ["entities/*"],
       "@features/*": ["features/*"],
+      "@lib/*": ["lib/*"],
       "@pages/*": ["pages/*"],
       "@sharded/*": ["sharded/*"],
       "@types/*": ["types/*"],

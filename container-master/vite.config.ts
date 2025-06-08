@@ -53,6 +53,10 @@ export default ({ mode }: { mode: string }) => {
           replacement: path.resolve(__dirname, 'src/features'),
         },
         {
+          find: '@lib',
+          replacement: path.resolve(__dirname, 'src/lib'),
+        },
+        {
           find: '@pages',
           replacement: path.resolve(__dirname, 'src/pages'),
         },
