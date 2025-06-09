@@ -1,3 +1,4 @@
+import CompanyLogo from '@app/styles/images/xyz.svg?react';
 import {
   Disclosure,
   DisclosureButton,
@@ -11,7 +12,6 @@ import {
   PopoverPanel,
 } from '@headlessui/react';
 import { Bars3Icon, BellIcon, EllipsisVerticalIcon, UserCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
-
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
@@ -43,7 +43,7 @@ export default function Example() {
           {/* 회사 로그 */}
           <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
             <div className='flex shrink-0 items-center'>
-              <img alt='Your Company' src='../../../app/styles/images/xyz.svg' className='h-32 w-auto' />
+              <CompanyLogo className='h-32 w-auto' />
             </div>
             <div className='hidden sm:ml-12 sm:block'>
               <div className='flex h-full flex-1'>
