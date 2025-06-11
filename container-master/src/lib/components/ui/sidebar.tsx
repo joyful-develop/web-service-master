@@ -3,15 +3,14 @@ import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { PanelLeftIcon } from 'lucide-react';
 
-import { Button } from '@/lib/components/ui/button';
-import { Input } from '@/lib/components/ui/input';
-import { Separator } from '@/lib/components/ui/separator';
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/lib/components/ui/sheet';
-import { Skeleton } from '@/lib/components/ui/skeleton';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/lib/components/ui/tooltip';
-import { useIsMobile } from '@/lib/hooks/use-mobile';
-import { cn } from '@/lib/utils/utils';
-
+import { Button } from '@lib/components/ui/button.tsx';
+import { Input } from '@lib/components/ui/input.tsx';
+import { Separator } from '@lib/components/ui/separator.tsx';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@lib/components/ui/sheet.tsx';
+import { Skeleton } from '@lib/components/ui/skeleton.tsx';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@lib/components/ui/tooltip.tsx';
+import { useIsMobile } from '@lib/hooks/use-mobile.ts';
+import { cn } from '@lib/utils/utils.ts';
 import { Slot } from '@radix-ui/react-slot';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';

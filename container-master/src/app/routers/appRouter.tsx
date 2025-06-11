@@ -1,6 +1,7 @@
 import React from 'react';
 
-import App from '@app/index.tsx';
+import App from '@/app/index2.tsx';
+
 import DashBoardHome from '@pages/dashBoard/DashBoard.tsx';
 import UserSetting from '@pages/userSetting/UserSetting.tsx';
 
