@@ -65,10 +65,6 @@ export default ({ mode }: { mode: string }) => {
           replacement: path.resolve(__dirname, 'src/sharded'),
         },
         {
-          find: '@types',
-          replacement: path.resolve(__dirname, 'src/types'),
-        },
-        {
           find: '@widgets',
           replacement: path.resolve(__dirname, 'src/widgets'),
         },

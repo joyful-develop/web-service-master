@@ -9,7 +9,6 @@
       "@lib/*": ["lib/*"],
       "@pages/*": ["pages/*"],
       "@sharded/*": ["sharded/*"],
-      "@types/*": ["types/*"],
       "@widgets/*": ["widgets/*"]
     }
   },
