@@ -256,7 +256,7 @@ const data = {
 
 export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className='border-r-0' {...props}>
+    <Sidebar className='sticky top-0 hidden h-svh border-l lg:flex' {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
         <NavMain items={data.navMain} />
