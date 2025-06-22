@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,7 +18,7 @@ export const iframeHeight = '800px';
 
 export const description = 'A sidebar with a header and a search form.';
 
-export default function Page() {
+export default function Page({ children }: { children: React.ReactNode }) {
   const contentHeight = 'h-[calc(100vh-2px-calc(var(--header-height)*2))]';
   const contentMaxHeight = 'max-h-[calc(100vh-66px-calc(var(--header-height)*2))]';
 
@@ -43,10 +45,11 @@ export default function Page() {
               </Breadcrumb>
             </header>
             <div className={`${contentMaxHeight} overflow-auto`}>
-              <div className='flex flex-1 flex-col gap-4 p-4'>
+              {children}
+              {/* <div className='flex flex-1 flex-col gap-4 p-4'>
                 <div className='bg-muted/50 mx-auto h-24 w-full max-w-3xl rounded-xl' />
                 <div className='bg-muted/50 mx-auto h-[100vh] w-full max-w-3xl rounded-xl' />
-              </div>
+              </div> */}
             </div>
           </SidebarInset>
           <SidebarRight className={`${contentHeight}`} />

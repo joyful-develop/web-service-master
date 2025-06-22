@@ -33,7 +33,7 @@ const data = {
       items: [
         {
           title: 'History',
-          url: '#',
+          url: '/src/pages/userSetting/UserSetting',
         },
         {
           title: 'Starred',

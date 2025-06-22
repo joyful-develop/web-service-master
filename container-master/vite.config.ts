@@ -8,6 +8,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 import federation from '@originjs/vite-plugin-federation';
 import tailwindcss from '@tailwindcss/vite';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
 
 export default ({ mode }: { mode: string }) => {
@@ -25,6 +26,10 @@ export default ({ mode }: { mode: string }) => {
       tailwindcss(),
       topLevelAwait(),
       svgr(),
+      tanstackRouter({
+        target: 'react',
+        autoCodeSplitting: true,
+      }),
       visualizer(),
       federation({
         name: 'host-app',
